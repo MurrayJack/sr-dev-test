@@ -1,2 +1,3 @@
 # sr-dev-test
-Created with CodeSandbox
+
+An example app with some concepts to talk thru in a technical interview.
