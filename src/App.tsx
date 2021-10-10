@@ -1,9 +1,13 @@
+import React from "react";
+import { Example } from "./lib/Example";
+import { GraphQLContext } from "./lib/GraphQL.context";
 import "./styles.css";
 
 export default function App() {
   return (
-    <div className="App">
+    <GraphQLContext>
       <h1>Lets Chat!</h1>
-    </div>
+      <Example />
+    </GraphQLContext>
   );
 }
