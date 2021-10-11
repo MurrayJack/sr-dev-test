@@ -1,2 +1,0 @@
-// reacr portal
-// dialog html..

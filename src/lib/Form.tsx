@@ -2,8 +2,13 @@ import { gql, useMutation } from "@apollo/client";
 import { createRef, useState } from "react";
 import { useData } from "./data.context";
 
-export const Form = ({ open }: { open: boolean }) => {
-  const formRef = createRef<HTMLDialogElement>();
+export const Form = ({
+  open,
+  onClose
+}: {
+  open: boolean;
+  onClose: () => void;
+}) => {
   const { refetch } = useData();
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
@@ -20,7 +25,9 @@ export const Form = ({ open }: { open: boolean }) => {
 
   const [mutate] = useMutation(mutation);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+
     mutate({
       variables: {
         name,
@@ -28,13 +35,14 @@ export const Form = ({ open }: { open: boolean }) => {
       },
       update: () => {
         refetch();
+        onClose();
       }
     });
   };
 
   return (
-    <dialog ref={formRef} onClose={handleClick} open={open}>
-      <form method="dialog">
+    <dialog open={open}>
+      <form onSubmit={handleClick}>
         <header>
           <h1>Add New</h1>
         </header>
@@ -57,8 +65,10 @@ export const Form = ({ open }: { open: boolean }) => {
           <br />
         </article>
         <footer>
-          <button>OK</button>
-          <button>Cancel</button>
+          <button type="submit">OK</button>
+          <button onClick={() => onClose()} type="button">
+            Cancel
+          </button>
         </footer>
       </form>
     </dialog>

@@ -14,7 +14,7 @@ export const Example = () => {
 
       <Grid />
 
-      <Form open={open} />
+      <Form open={open} onClose={() => setOpen(false)} />
     </DataState>
   );
 };
