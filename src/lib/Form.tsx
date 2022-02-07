@@ -1,6 +1,9 @@
 import { gql, useMutation } from "@apollo/client";
 import { createRef, useState } from "react";
 import { useData } from "./data.context";
+import styled from "styled-components";
+
+const Button = styled.button``;
 
 export const Form = ({
   open,
@@ -72,10 +75,10 @@ export const Form = ({
           </div>
         </article>
         <footer>
-          <button type="submit">OK</button>
-          <button onClick={() => onClose()} type="button">
+          <Button type="submit">OK</Button>
+          <Button onClick={() => onClose()} type="button">
             Cancel
-          </button>
+          </Button>
         </footer>
       </form>
     </dialog>
