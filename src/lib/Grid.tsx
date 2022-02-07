@@ -16,7 +16,9 @@ export const Grid = () => {
 
   return (
     <table>
-      <thead></thead>
+      <thead>
+        {/* <!-- todo --> */}
+      </thead>
       <tbody>
         {data?.authors?.map((e) => (
           <tr>

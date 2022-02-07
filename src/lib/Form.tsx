@@ -47,22 +47,29 @@ export const Form = ({
           <h1>Add New</h1>
         </header>
         <article>
-          <label>Author</label>
-          <br />
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            name="author"
-          />
-          <br />
-          <label>Title</label>
-          <br />
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            name="title"
-          />
-          <br />
+          {/* author */}
+          <div>
+            <label>Author</label>
+            <br />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              name="author"
+            />
+            <br />
+          </div>
+
+          {/* title */}
+          <div>
+            <label>Title</label>
+            <br />
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              name="title"
+            />
+            <br />
+          </div>
         </article>
         <footer>
           <button type="submit">OK</button>
