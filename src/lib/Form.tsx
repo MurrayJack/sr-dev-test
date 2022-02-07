@@ -76,9 +76,9 @@ export const Form = ({
         </article>
         <footer>
           <Button type="submit">OK</Button>
-          <Button onClick={() => onClose()} type="button">
+          <a href="#" onClick={() => onClose()} type="button">
             Cancel
-          </Button>
+          </a>
         </footer>
       </form>
     </dialog>
